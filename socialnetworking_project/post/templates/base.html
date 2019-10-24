@@ -39,13 +39,7 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     {% if user.is_authenticated %}
-                    <li>
-<<<<<<< HEAD
-                        <a href="#">Logout</a>
-=======
-                        <a href="{% url 'logout' %}">Logout</a>
->>>>>>> 9618242319c7f51fdbcf5a987557c23d2ffab8da
-                    </li>
+                    <li><a href="#">Logout</a></li>
                     {% else %}
                     <li>
                         <a href="{% url 'register' %}">Register</a>
@@ -55,8 +49,6 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
-=======
         {% if messages %}
         <div class='container'>
             <ul class="messages">
@@ -70,7 +62,6 @@
         </div>
         {% endif %}
 
->>>>>>> 9618242319c7f51fdbcf5a987557c23d2ffab8da
         <div class="container theme-showcase" role="main">
             {% block body %}
             {% endblock body %}

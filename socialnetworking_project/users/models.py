@@ -4,9 +4,9 @@ from django.db import models
 from django.db import models
 from django.contrib.auth.models import User
 
-from socialnetworking_project import settings
+from socialnetworking_project.settings import AUTH_USER_MODEL as user
 
 
 class Profile(models.Model):
     """docstring for Profile"""
-    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    user = models.OneToOneField(user, on_delete=models.CASCADE)
