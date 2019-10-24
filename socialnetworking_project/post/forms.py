@@ -1,7 +1,7 @@
 from django import forms
+from django.forms import DateInput
 
 from socialnetworking_project.post.models import User
-
 
 class UserRegisterForm(forms.ModelForm):
     username = forms.EmailField(label= 'Email Address')

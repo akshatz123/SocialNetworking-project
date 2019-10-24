@@ -10,7 +10,7 @@ from .forms import UserRegisterForm
 def register_view(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
-        print (form)
+        # print (form)
 
         if form.is_valid():
             form.save()
