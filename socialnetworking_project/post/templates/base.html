@@ -8,13 +8,12 @@
         <meta name="author" content="">
 
         <title>{% block title %}Django note{% endblock title %}</title>
-        {% block stylesheets %}
-        <link rel="stylesheet" href="{% static 'socialnetworking_project/bootstrap.min.css' %}" />
-        <link rel="stylesheet" href="{% static 'socialnetworking_project/bootstrap-theme.min.css' %}" />
-        <link rel="stylesheet" href="{% static 'socialnetworking_project/theme.css' %}" />
-        {% endblock stylesheets %}
+            {% block stylesheets %}
+                <link rel="stylesheet" href="{% static 'socialnetworking_project/bootstrap.css.map' %}" />
+                <link rel="stylesheet" href="{% static 'socialnetworking_project/bootstrap-theme.min.css' %}" />
+                <link rel="stylesheet" href="{% static 'socialnetworking_project/theme.css' %}" />
+            {% endblock stylesheets %}
     </head>
-
     {% block scriptload %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="{% static 'socialnetworking_project/js/bootstrap.min.js' %}"></script>
@@ -49,18 +48,6 @@
                 </div>
             </div>
         </div>
-        {% if messages %}
-        <div class='container'>
-            <ul class="messages">
-            {% for message in messages %}
-            <li id="message_{{ forloop.counter }}" {% if message.tags %} class="alert alert-{{ message.tags }}"
-                {% endif %}>
-                {{ message }}
-            </li>
-            {% endfor %}
-            </ul>
-        </div>
-        {% endif %}
 
         <div class="container theme-showcase" role="main">
             {% block body %}
