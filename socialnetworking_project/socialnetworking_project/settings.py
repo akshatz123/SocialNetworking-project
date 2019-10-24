@@ -15,10 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 9618242319c7f51fdbcf5a987557c23d2ffab8da
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
@@ -30,10 +26,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 9618242319c7f51fdbcf5a987557c23d2ffab8da
 # Application definition
 
 INSTALLED_APPS = [
@@ -45,11 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crispy_forms',
     'post',
-<<<<<<< HEAD
     'users',
-=======
-    'users'
->>>>>>> 9618242319c7f51fdbcf5a987557c23d2ffab8da
 ]
 
 MIDDLEWARE = [
