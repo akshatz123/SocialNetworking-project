@@ -11,6 +11,7 @@ def register_view(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         print (form)
+
         if form.is_valid():
             form.save()
             msg = 'Your account is created ! You are now able to login'

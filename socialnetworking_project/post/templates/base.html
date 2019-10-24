@@ -40,7 +40,11 @@
                 <ul class="nav navbar-nav navbar-right">
                     {% if user.is_authenticated %}
                     <li>
+<<<<<<< HEAD
                         <a href="#">Logout</a>
+=======
+                        <a href="{% url 'logout' %}">Logout</a>
+>>>>>>> 9618242319c7f51fdbcf5a987557c23d2ffab8da
                     </li>
                     {% else %}
                     <li>
@@ -51,6 +55,22 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
+=======
+        {% if messages %}
+        <div class='container'>
+            <ul class="messages">
+            {% for message in messages %}
+            <li id="message_{{ forloop.counter }}" {% if message.tags %} class="alert alert-{{ message.tags }}"
+                {% endif %}>
+                {{ message }}
+            </li>
+            {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+>>>>>>> 9618242319c7f51fdbcf5a987557c23d2ffab8da
         <div class="container theme-showcase" role="main">
             {% block body %}
             {% endblock body %}
