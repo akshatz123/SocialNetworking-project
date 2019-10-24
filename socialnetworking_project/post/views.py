@@ -1,15 +1,11 @@
 from django.http import request
 from django.shortcuts import render
 
-# Create your views here.
+from django.contrib.auth import get_user_model
+User = get_user_model()
 
 
 def user_only(user):
     return user.is_authenticated()
 
 
-def login(user):
-    if user.is_authenticated():
-        return render(request, 'dashboard.html')
-    else:
-        pass

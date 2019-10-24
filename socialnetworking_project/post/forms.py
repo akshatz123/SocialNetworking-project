@@ -1,9 +1,10 @@
 from django import forms
-from django.forms import DateInput
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import get_user_model
+User = get_user_model()
 
-from socialnetworking_project.post.models import User
 
-class UserRegisterForm(forms.ModelForm):
+class UserRegisterForm(UserCreationForm):
     username = forms.EmailField(label= 'Email Address')
     email = forms.EmailField(label='Confirm Email')
     password = forms.CharField(widget=forms.PasswordInput)
@@ -13,13 +14,5 @@ class UserRegisterForm(forms.ModelForm):
     dateofbirth = forms.DateField(label='Date of birth')
 
     class Meta:
-        model = User
-        fields =[
-            'username',
-            'email',
-            'password',
-            'password2',
-            'first_name',
-            'last_name',
-            'dateofbirth'
-        ]
+        model = get_user_model()
+        fields = ['username', 'email', 'password', 'password2', 'first_name', 'last_name', 'dateofbirth']
