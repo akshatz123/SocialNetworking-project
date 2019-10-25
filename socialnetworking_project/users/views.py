@@ -21,4 +21,3 @@ def register_view(request):
         'form': form
     }
     return render(request, 'users/register.html', context)
-
