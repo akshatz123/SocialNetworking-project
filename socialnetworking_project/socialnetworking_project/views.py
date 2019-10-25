@@ -6,20 +6,19 @@ from django.http import HttpResponseRedirect
 
 def home_view(request):
     if request.method == 'POST':
-        username = request.POST.get('username', None)
+        email = request.POST.get('email', None)
         password = request.POST.get('password', None)
 
-        auth = authenticate(username=username, password=password)
+        auth = authenticate(username=email, password=password)
         if auth is not None:
             login(request, auth)
             return HttpResponseRedirect('dashboard/')
         else:
             messages.add_message(request, messages.INFO, "Authentication Failed!")
             return HttpResponseRedirect('/')
-
-    return render(request, 'home.html')
+    else:
+        return render(request, 'home.html')
 
 
 def logout_view(request):
     return render(request, 'home.html')
-

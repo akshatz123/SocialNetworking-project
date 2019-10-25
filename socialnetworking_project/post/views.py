@@ -7,5 +7,3 @@ User = get_user_model()
 
 def user_only(user):
     return user.is_authenticated()
-
-

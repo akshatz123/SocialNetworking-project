@@ -9,7 +9,7 @@ class DateInput(forms.DateInput):
 
 
 class UserRegisterForm(UserCreationForm):
-    username = forms.EmailField(label= 'Email Address')
+    username = forms.EmailField(label='Email Address')
     password = forms.CharField(widget=forms.PasswordInput)
     password2 = forms.CharField(widget=forms.PasswordInput)
     first_name = forms.CharField(label='First Name')
