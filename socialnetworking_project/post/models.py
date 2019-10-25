@@ -6,7 +6,6 @@ from django.contrib.auth.models import AbstractUser
 class User(AbstractUser):
     email = models.EmailField(max_length=255, unique=True)
     dateofbirth = models.DateField(auto_now=False, null=True, blank=True)
-    username = models.CharField(max_length=30, unique=True)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']
@@ -18,3 +17,7 @@ class User(AbstractUser):
 class Post(models.Model):
     likes = models.IntegerField()
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    title = models.CharField(max_length=40, null=True)
+    description = models.CharField(max_length=500, null=True)
+    image = models.ImageField(blank=True)
+

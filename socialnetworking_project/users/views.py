@@ -10,17 +10,17 @@ from .forms import UserRegisterForm
 def register_view(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
-        # print (form)
-
         if form.is_valid():
-            f = form.save(commit=False)
-            f.user = request.user
-            f.save()
+            form.save()
+        # f.user = request.user
+        # f.save()
             msg = 'Your account is created ! You are now able to login'
             messages.success(request, msg)
+            return render(request, 'post/home.html')
     else:
         form = UserRegisterForm()
     context = {
         'form': form
     }
     return render(request, 'users/register.html', context)
+
